@@ -1,0 +1,96 @@
+::-webkit-scrollbar {
+	display: none;
+}
+
+body {
+	background-color: black;
+}
+
+h1 {
+	font-weight: bold;
+}
+
+.box {
+	overflow: hidden;
+	width: 100%;
+	margin-bottom: 16px;
+}
+
+#img {
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+	transform: scale(1);
+	transition: 1s ease-in-out;
+	transition-delay: 0.1s;
+}
+
+#img:hover
+{
+	transform: scale(1.2);
+}
+
+#modal
+{
+	/*position: fixed;*/
+	z-index: 2;
+	background-color: rgba(0, 0, 0, 0.9);
+	display: none;
+	overflow: hidden;
+	height: 100vh;
+}
+
+#mode
+{
+	max-width: 100%;
+	object-fit: contain: !important;
+	width: auto;
+	height: auto;
+}
+
+.content{
+	animation-name: zoom;
+	animation-duration: 0.3s;
+}
+
+@keyframes zoom {
+	from {transform: scale(0.1)} 
+	to {transform: scale(1)}
+}
+
+span {
+	color: white;
+	font-size: 24px!important;
+}
+
+#indicator{
+	width: 6.4%;
+	object-fit: contain;
+	display: inline-block;
+	opacity: 0.5;
+	padding: 0!important;
+	margin: 0!important;
+}
+
+.active
+{
+	opacity: 1!important;
+	border: solid 2.5px red;
+}
+
+@media only screen and (max-width:576px) {
+	.box {
+		margin-bottom: 8px;
+	}
+
+	#indicator{
+		width: 12.8%;
+	}
+}
+
+@media only screen and (min-width:577px) and (max-width: 768px) {
+
+	#indicator{
+		width: 12.8%;
+	}
+}

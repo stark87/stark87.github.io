@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Gallery Image Viewer</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="Gallery.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+		<div class="container-fluid" id="base">
+			<div class="row d-flex align-item-start p-4" style="background: white; position: sticky;
+			 top: 0; z-index: 1; box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);">
+				<h1>Gallery</h1>
+			</div>
+
+			<div class="row py-2 py-md-5 px-md-3" style="background: black;">
+				<div class="col-sm-12 col-md-6 col-lg-4 px-2">
+					<div class="box"><img src="images/chiron1.jpg" class="main" id="img"></div>
+					<div class="box"><img src="images/chiron2.jpg" class="main" id="img"></div>
+					<div class="box"><img src="images/chiron3.jpg" class="main" id="img"></div>
+					<div class="box"><img src="images/chiron4.jpg" class="main" id="img"></div>
+					<div class="box"><img src="images/chiron5.jpg" class="main" id="img"></div>
+				</div>
+
+				<div class="col-sm-12 col-md-6 col-lg-4 px-2">
+					<div class="box"><img src="images/chiron6.jpg" class="main" id="img"></div>
+					<div class="box"><img src="images/chiron7.jpg" class="main" id="img"></div>
+					<div class="box"><img src="images/iron man.jpg" class="main" id="img"></div>
+					<div class="box"><img src="images/spiderman.jpg" class="main" id="img"></div>
+					<div class="box"><img src="images/wolf.jpg" class="main" id="img"></div>		
+				</div>
+
+				<div class="col-sm-12 col-md-6 col-lg-4 px-2">
+					<div class="box"><img src="images/wolf1.jpg" class="main" id="img"></div>
+					<div class="box"><img src="images/wolf2.jpg" class="main" id="img"></div>
+					<div class="box"><img src="images/wolf3.jpg" class="main" id="img"></div>
+					<div class="box"><img src="images/wolf4.jpg" class="main" id="img"></div>
+					<div class="box"><img src="images/batman.jpg" class="main" id="img"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal" id="modal">
+			<div class="content" style="height: 100%;">
+				<div class="row align-items-center d-flex justify-content-end p-0 px-lg-5 m-0" style="height: 10%;">
+					<span class="fa fa-close" id="close" style="color: red;"></span>
+				</div>
+				<div class="row m-0 d-flex align-items-center align-items-lg-start justify-content-center pt-md-4 pt-lg-1" style="height: 60%;">
+					<div class="col-12 col-lg-6 d-flex align-items-center p-0" style="height: 100%;">
+						<img src="" id="mode">
+						
+					</div>
+				</div>
+				<div class="row d-flex align-items-center justify-content-center m-0" style="height: 10%;">
+					<span class="fa fa-chevron-left mr-4" onclick="left()"></span>
+					<span class="fa fa-chevron-right ml-4" onclick="right()"></span>
+				</div>
+				<div class="row align-items-start p-0 py-md-2 m-0" style="height: 20%; width: 100%;">
+					<div class="col p-0" style="height: 100%; width: 100%;">
+						<img src="images/chiron1.jpg" class="indicators" id="indicator">
+						<img src="images/chiron2.jpg" class="indicators" id="indicator">
+						<img src="images/chiron3.jpg" class="indicators" id="indicator">
+						<img src="images/chiron4.jpg" class="indicators" id="indicator">
+						<img src="images/chiron5.jpg" class="indicators" id="indicator">
+
+						<img src="images/chiron6.jpg" class="indicators" id="indicator">
+						<img src="images/chiron7.jpg" class="indicators" id="indicator">
+						<img src="images/iron man.jpg" class="indicators" id="indicator">
+						<img src="images/spiderman.jpg" class="indicators" id="indicator">
+						<img src="images/wolf.jpg" class="indicators" id="indicator">	
+
+						<img src="images/wolf1.jpg" class="indicators" id="indicator">
+						<img src="images/wolf2.jpg" class="indicators" id="indicator">
+						<img src="images/wolf3.jpg" class="indicators" id="indicator">
+						<img src="images/wolf4.jpg" class="indicators" id="indicator">
+						<img src="images/batman.jpg" class="indicators" id="indicator">
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		var modal = document.getElementById("modal");
+		var img = document.getElementsByTagName("img");
+		var mode = document.getElementById("mode");
+		var base = document.getElementById("base");
+		var indicator = document.getElementsByClassName("indicators");
+
+		var source = [];
+
+		$('.main').each(function(){
+			source.push(this.src);
+		}).get();
+
+		var indicatorSource = [];
+
+		$('.indicators').each(function(){
+			indicatorSource.push(this.src);
+		}).get();
+
+
+		var a;
+		var b;
+
+		$('.main').click(function(){
+			modal.style.display = "block";
+			base.style.position = "fixed";
+			base.style.opacity = "0.3";
+			mode.src = this.src;
+
+			a = document.getElementById("mode").src;
+			b = indicatorSource.indexOf(a);
+		 	indicator[b].className += " active";
+		})
+
+		$('.indicators').click(function () {
+			mode.src = this.src;
+
+			var current = document.getElementsByClassName("active");
+			current[0].className = current[0].className.replace(" active", "");
+
+			a = document.getElementById("mode").src;
+			b = indicatorSource.indexOf(a);
+		 	indicator[b].className += " active";
+		})
+
+		var span = document.getElementById("close");
+		span.onclick = function () {
+			modal.style.display = "none";
+			base.style.position = "inherit";
+			base.style.opacity = "1";
+
+			var current = document.getElementsByClassName("active");
+			current[0].className = current[0].className.replace(" active", "");
+		}
+
+
+		function changeFocus(x)
+		{
+			for (i = 0; i < indicator.length; i++) {
+				var current = document.getElementsByClassName("active");
+				current[0].className = current[0].className.replace(" active", "");	
+				indicator[x].className += " active";
+			}
+		}
+
+		function left() {
+			var y = mode.src;
+			var x = source.indexOf(y);
+			if (x <= 0) {x = source.length;}
+			x--;
+			mode.src = source[x];
+			changeFocus(x);
+		}
+
+		function right() {
+			var y = mode.src;
+			var x = source.indexOf(y);
+			if (x >= source.length-1) {x = -1;}
+			x++;
+			mode.src = source[x];
+			changeFocus(x);
+		}
+
+	</script>
+</html>
