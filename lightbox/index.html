@@ -11,6 +11,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script src="scripts/swiped-events.min.js"></script>
 	</head>
 
 	<body>
@@ -52,7 +53,7 @@
 				<div class="row align-items-center d-flex justify-content-end p-0 px-lg-5 m-0" style="height: 10%;">
 					<span class="fa fa-close" id="close" style="color: red;"></span>
 				</div>
-				<div class="row m-0 d-flex align-items-center align-items-lg-start justify-content-center pt-md-4 pt-lg-1" style="height: 60%;">
+				<div class="row m-0 d-flex align-items-center align-items-lg-start justify-content-center pt-md-4 pt-lg-1" id="big" style="height: 60%;">
 					<div class="col-12 col-lg-6 d-flex align-items-center p-0" style="height: 100%;">
 						<img src="" id="mode">
 						
@@ -169,6 +170,10 @@
 			mode.src = source[x];
 			changeFocus(x);
 		}
+
+		document.getElementById('big').addEventListener("swiped-left", right);
+
+		document.getElementById('big').addEventListener("swiped-right", left);
 
 	</script>
 </html>
