@@ -107,7 +107,9 @@ function change(){
 			for (i = bin.length-1; i >= 0; i--) {
 				fin += bin.substr(i,1);
 			}
+			console.log(typeof fin);
 			Number(fin);
+			console.log(typeof fin);
 
 			return fin;
 		}
