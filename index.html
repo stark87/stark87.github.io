@@ -4,17 +4,108 @@
         <title>Repository</title>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://kit.fontawesome.com/ea8d5aae40.js" crossorigin="anonymous"></script>
+        <style type="text/css">
+            html::-webkit-scrollbar{
+                display: none;
+            }
+            @media only screen and (min-width: 769px) {
+                .main{
+                    padding: 0 4em!important;
+                }
+                .note{
+                    padding-left: 3em!important;
+                }
+                .item{
+                    padding: 0 3em!important;
+                }
+            }
+            @media only screen and (min-width: 576px) and (max-width: 768px) {
+                .main{
+                    padding: 0 3em!important;
+                }
+                .note{
+                    padding-left: 3em!important;
+                }
+                .item{
+                    padding: 0 3em!important;
+                }
+            }
+            a {
+                text-decoration: none;
+                font-weight: bold;
+            }
+            hr {
+                border: 0.05em solid black;
+                margin-top: 1em;
+            }
+        </style>
+
     </head>
-    <body>
-        <div>
-            <p>Repository</p>
-            <a href="/lightbox">Lightbox</a>
+    <body style="background-color: #fcf5dc; font-family: Helvetica">
+        <br>
+
+        <div style="text-align: center;">
+            <h5 style="letter-spacing: 1em; font-weight: lighter;">WELCOME TO</h5>
+            <h1 style="letter-spacing: 0.2em; font-size: 2.5em">ADEDEJI OLADAPO'S</h1>
+            <h4 style="letter-spacing: 0.4em; font-weight: 500;">REPOSITORY</h4>
+        </div>
+
+        <br>
+
+        <div class="main" style="padding: 0 1em">
+            <h2><i class="fa fa-briefcase"></i> PROJECTS</h2>
+            <p class="note" style="font-style: italic; padding-left: 0;">All projects were built with responsive design</p>
+
+            <div class="item">
+                <h3><i class="fa fa-calculator"></i> Calculator</h3>
+                <p>A simple app for convering number from one base to another. Supports Binary, Octal, Decimal and Hexadecimal conversions.</p>
+                <p>Original concept by me</p>
+                Click <a href="/calculator">here</a> to go to Calculator
+                <hr>
+            </div>
+
             <br>
-            <a href="/calculator">Calculator</a>
+
+            <div class="item">
+                <h3><i class="fa fa-receipt"></i> Budget App</h3>
+                <p>An App that helps you budget your expenses against your income.</p>
+                <p>Courtesy of <a href="https://youtu.be/YDkB4xpP6Sc" target="_blank">Coding Addict</a></p>
+                Click <a href="/Budget-App">here</a> to go to Budget App
+                <hr>
+            </div>
+
             <br>
-            <a href="/Budget-App">Budget App</a>
+
+            <div class="item">
+                <h3><i class="fa fa-image"></i> LightBox</h3>
+                <p>A photo gallery where photos can be viewed in a light box</p>
+                <p>Original concept by me. Built using JQuery</p>
+                Click <a href="/lightbox">here</a> to go to Lightbox
+                <hr>
+            </div>
+
             <br>
-            <a href="/personalwebsite">Personal Website</a>
+
+            <div class="item">
+                <h3><i class="fa fa-guitar"></i> Welshly Arms</h3>
+                <p>A clone of the official website of one of my favorite Rock bands.</p>
+                Click <a href="/personalwebsite">here</a> to go to Welshly Arms
+                <p>Original <a href="http://welshlyarms.com/" target="_blanks">Welshly Arms</a> Site</p>
+                <hr>
+            </div>
+
+            <br>
+
+            <div class="item">
+                <h3><i class="fa fa-mobile"></i> Phone Store</h3>
+                <p>An e-commerce website made with React that sells phones</p>
+                <p>Courtesy of <a href="https://youtu.be/-edmQKcOW8s" target="_blanks">Coding Addict</a> tutorial</p>
+                <a href="https://react-phone-store-91x.netlify.app/">Phone Store</a>
+                <hr>
+            </div>
+
+            <br>            
         </div>
     </body>
 </html>
